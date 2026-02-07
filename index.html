@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Prompt Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ====== Базовый CSS для карточек и анимации ====== */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    #quick-links {
+      margin-top: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    /* Hover эффект «подсветки» */
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      border: 2px solid #4CAF50;
+    }
+
+    /* Класс для эффекта клика */
+    .card.active {
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      border-color: #FF9800;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>AI Prompt Hub</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="prompts.html">Prompts</a>
+    <a href="ai-guide.html">AI Guide</a>
+    <a href="tools.html">Tools</a>
+    <a href="tutorials.html">Tutorials</a>
+  </nav>
+</header>
+
+<main>
+  <p>Добро пожаловать! Здесь вы найдете базу AI-промптов, инструменты и обучающие видео для создания видео с AI.</p>
+
+  <section id="quick-links">
+    <h2>Quick Links</h2>
+    <div class="cards">
+      <div class="card" data-type="prompts">
+        <h3>Prompts</h3>
+        <p>Перейти к базе промптов</p>
+        <a href="prompts.html">Открыть</a>
+      </div>
+      <div class="card" data-type="guide">
+        <h3>AI Guide</h3>
+        <p>Полезные AI-инструменты</p>
+        <a href="ai-guide.html">Открыть</a>
+      </div>
+      <div class="card" data-type="tools">
+        <h3>Tools</h3>
+        <p>Все инструменты для видео и AI</p>
+        <a href="tools.html">Открыть</a>
+      </div>
+      <div class="card" data-type="tutorials">
+        <h3>Tutorials</h3>
+        <p>Обучающие видео и гайды</p>
+        <a href="tutorials.html">Открыть</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 AI Prompt Hub</p>
+</footer>
+
+<!-- ====== JavaScript для интерактивности ====== -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card');
+
+    // Добавляем эффект клика (подсветка и увеличение)
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.add('active');
+        setTimeout(() => {
+          card.classList.remove('active');
+        }, 200);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
